@@ -1,0 +1,30 @@
+.card-container {
+  display: flex;
+  gap: 5rem;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  justify-content: space-between;
+
+  & .card {
+    flex: 0 0 45%;
+    padding: 2rem;
+    background-color: $joke-bg;
+    border-radius: $border-radius;
+    position: relative;
+
+    & i {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: $transition-hover;
+
+      &.active {
+        color: $favorite;
+      }
+    }
+  }
+}

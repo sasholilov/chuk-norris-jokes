@@ -49,6 +49,10 @@ const store = createStore({
             console.log('newjoke', newJoke)
             context.commit('setFavourites', newJoke);
         }
+        ,
+        deleteFromFavourites(context, id) {
+            context.commit('deleteFavourite', id)
+        }
     }
 ,
     getters: {
@@ -63,6 +67,9 @@ const store = createStore({
         },
         getIsFavorite (state) {
             return state.favourites.some(favJoke=>favJoke.id===state.joke.id);
+        },
+        getFavorites (state) {
+            return state.favourites;
         }
     }
     ,
@@ -86,6 +93,9 @@ const store = createStore({
                state.favourites = state.favourites.filter(favJoke=>favJoke.id !== joke.id);
             }
             console.log(state.favourites)
+        },
+        deleteFavourite(state, id) {
+            state.favourites = state.favourites.filter(favJoke=>favJoke.id !== id);
         }
     }
 })

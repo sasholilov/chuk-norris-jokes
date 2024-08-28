@@ -32,6 +32,17 @@
       &:hover {
         background-color: $button-bg-hover;
         color: $button-text-hover;
+
+        & span {
+          color: $select-hover;
+        }
+      }
+
+      & .from-category {
+        display: block;
+        font-size: 1rem;
+        color: $favorite;
+        transition: $transition-hover;
       }
     }
   }
@@ -49,20 +60,20 @@
     }
 
     & i {
-    position: absolute;
+      position: absolute;
       bottom: 1rem;
       right: 1rem;
       font-size: 3rem;
       cursor: pointer;
       transition: $transition-hover;
-    }
 
-    & i:hover {
-      color: $favorite;
-    }
+      &.active {
+        color: $favorite;
+      }
 
-    & i.active {
-      color: $favorite;
+      &:hover {
+        color: $favorite;
+      }
     }
   }
 }

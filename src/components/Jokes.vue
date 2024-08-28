@@ -5,7 +5,9 @@
         <option value="" disabled selected>Choose category</option>
         <option v-for="cat in categories" :value="cat">{{toCapitalize(cat)}}</option>
       </select>
-      <button @click="newJoke">Get another one</button>
+      <button @click="newJoke">Get another one
+        <span class="from-category">from {{category ? category : 'random'}} category</span>
+      </button>
     </div>
     <Spinner v-if="loading" />
     <div v-else class="joke">

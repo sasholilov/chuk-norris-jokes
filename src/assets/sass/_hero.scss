@@ -33,7 +33,7 @@
         cursor: pointer;
         transition: $transition-hover;
 
-        &:hover{
+        &:hover {
           background-color: $button-bg-hover;
           color: $button-text-hover;
         }
@@ -46,10 +46,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-  }
 
-  & .hero-image img {
-    max-width: 100%;
-    height: auto;
+    & img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
