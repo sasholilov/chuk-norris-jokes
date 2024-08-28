@@ -227,9 +227,20 @@ button, select {
   padding: 4rem 2rem;
   background-color: #d0d9ff;
   border-radius: 0 0 1rem 1rem;
+  position: relative;
 }
 .jokes-container .joke p {
   color: #202833;
+}
+.jokes-container .joke i {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.jokes-container .joke i.active {
+  color: #ef6c23;
 }
 
 /*# sourceMappingURL=main.css.map */

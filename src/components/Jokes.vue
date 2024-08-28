@@ -9,7 +9,8 @@
     </div>
     <Spinner v-if="loading" />
     <div v-else class="joke">
-      <p>{{joke}}</p>
+      <p>{{joke.jokeText}}</p>
+      <i class="fa fa-star" :class="{'active':isFavorite}" @click="toFavorites(joke)"></i>
     </div>
   </div>
 </template>
@@ -30,6 +31,9 @@ export default {
     },
     toCapitalize(text) {
       return `${text[0].toUpperCase()}${text.slice(1)}`;
+    },
+    toFavorites (joke) {
+      this.$store.dispatch("addToFavourites", joke)
     }
   },
   computed: {
@@ -41,6 +45,9 @@ export default {
     },
     loading() {
       return this.$store.getters.getLoading;
+    },
+    isFavorite(){
+      return this.$store.getters.getIsFavorite;
     }
   },
   mounted() {

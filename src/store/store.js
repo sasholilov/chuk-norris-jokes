@@ -1,4 +1,5 @@
 import {createStore} from 'vuex'
+import favourites from "@/components/Favourites.vue";
 
 const store = createStore({
     state(){
@@ -10,6 +11,7 @@ const store = createStore({
                 isFav: false,
             },
             categories: [],
+            favourites: []
         }
     },
 
@@ -39,17 +41,28 @@ const store = createStore({
                 console.log(error);
             }
         }
+        ,
+        addToFavourites(context, joke) {
+            const newJoke = {...joke, isFav: !joke.isFav};
+            context.state.joke.isFav = newJoke.isFav;
+            console.log('joke', joke)
+            console.log('newjoke', newJoke)
+            context.commit('setFavourites', newJoke);
+        }
     }
 ,
     getters: {
         getJoke (state) {
-            return state.joke.jokeText;
+            return state.joke;
         },
         getCategories (state) {
             return state.categories;
         },
         getLoading (state) {
             return state.loading;
+        },
+        getIsFavorite (state) {
+            return state.favourites.some(favJoke=>favJoke.id===state.joke.id);
         }
     }
     ,
@@ -57,13 +70,22 @@ const store = createStore({
         setJoke(state, newJoke){
             state.joke.jokeText = newJoke.value;
             state.joke.id = newJoke.id;
+            state.joke.isFav = false;
         },
         saveCategories(state, fetchedCategories){
             state.categories = fetchedCategories;
-            console.log(state.categories);
         },
         setLoading(state, isLoading){
             state.loading = isLoading;
+        },
+        setFavourites(state, joke){
+            if (!state.favourites.some(favJoke=>favJoke.id === joke.id) && joke.isFav) {
+                state.favourites.push(joke);
+            }
+            if (state.favourites.some(favJoke=>favJoke.id === joke.id) && !joke.isFav) {
+               state.favourites = state.favourites.filter(favJoke=>favJoke.id !== joke.id);
+            }
+            console.log(state.favourites)
         }
     }
 })
