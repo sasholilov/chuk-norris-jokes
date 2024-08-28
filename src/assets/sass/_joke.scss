@@ -54,6 +54,11 @@
       right: 1rem;
       font-size: 3rem;
       cursor: pointer;
+      transition: $transition-hover;
+    }
+
+    & i:hover {
+      color: $favorite;
     }
 
     & i.active {

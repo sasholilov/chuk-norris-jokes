@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 /* Set default line height */
 body {
   line-height: 1;
-  background-color: #f9f9f9;
+  background-color: #ededed;
 }
 
 /* Remove list styles */
@@ -149,7 +149,7 @@ button, select {
   flex-direction: row;
   gap: 2rem;
   flex-wrap: wrap;
-  padding: 5rem 2rem;
+  padding: 5rem 3rem;
   align-items: center;
 }
 .hero-container h2 {
@@ -238,6 +238,10 @@ button, select {
   right: 1rem;
   font-size: 3rem;
   cursor: pointer;
+  transition: 0.3s;
+}
+.jokes-container .joke i:hover {
+  color: #ef6c23;
 }
 .jokes-container .joke i.active {
   color: #ef6c23;
