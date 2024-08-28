@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Make sure that block elements take up full width */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Set default line height */
+body {
+  line-height: 1;
+  background-color: #f9f9f9;
+}
+
+/* Remove list styles */
+ol, ul {
+  list-style: none;
+}
+
+/* Remove quotes from blockquotes and q elements */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: "";
+  content: none;
+}
+
+/* Set tables to have consistent border spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset images to be displayed as block by default */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Reset form elements */
+button, input, select, textarea {
+  font: inherit;
+  margin: 0;
+}
+
+/* Remove the default focus outline, add a custom focus style */
+:focus {
+  outline: none;
+}
+
+/* Set box-sizing globally to include padding and border in element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  background-color: #202833;
+  padding: 1.4rem;
+}
+header nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header nav .logo-wrapper img {
+  max-width: 80px;
+  cursor: pointer;
+}
+header nav .menu ul {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+header nav .menu ul li {
+  cursor: pointer;
+  color: #f3fdff;
+  transition: 0.3s;
+}
+header nav .menu ul li:hover {
+  color: #fffe49;
+}
+
+body {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 62.5%;
+}
+
+header {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 2rem;
+  line-height: 2.7rem;
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 3.6rem;
+  font-weight: bold;
+}
+
+button, select {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.hero-container {
+  max-width: 1280px;
+  background-color: #202833;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 5rem 2rem;
+  align-items: center;
+}
+.hero-container h2 {
+  color: #f3fdff;
+}
+.hero-container .hero-text {
+  padding-left: 1rem;
+  flex: 0 0 37%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.hero-container .hero-text a {
+  align-self: center;
+}
+.hero-container .hero-text a button {
+  border: none;
+  border-radius: 1rem;
+  background-color: #fffe0c;
+  color: #1f3a6e;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.hero-container .hero-text a button:hover {
+  background-color: #f16d23;
+  color: #f3fdff;
+}
+.hero-container .hero-image {
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.hero-container .hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.jokes-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+.jokes-container .joke-actions {
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #202833;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 1rem 1rem 0 0;
+  padding: 2.5rem;
+}
+.jokes-container .joke-actions select {
+  border-radius: 1rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  background-color: #f9f9f9;
+}
+.jokes-container .joke-actions button {
+  border: none;
+  border-radius: 1rem;
+  background-color: #fffe0c;
+  color: #1f3a6e;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.jokes-container .joke-actions button:hover {
+  background-color: #f16d23;
+  color: #f3fdff;
+}
+.jokes-container .joke {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #d0d9ff;
+  border-radius: 0 0 1rem 1rem;
+}
+.jokes-container .joke p {
+  color: #202833;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,84 @@
+@import "variables";
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Make sure that block elements take up full width */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Set default line height */
+body {
+  line-height: 1;
+  background-color: $body-bg;
+}
+
+/* Remove list styles */
+ol, ul {
+  list-style: none;
+}
+
+/* Remove quotes from blockquotes and q elements */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+  content: none;
+}
+
+/* Set tables to have consistent border spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset images to be displayed as block by default */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Reset form elements */
+button, input, select, textarea {
+  font: inherit;
+  margin: 0;
+}
+
+/* Remove the default focus outline, add a custom focus style */
+:focus {
+  outline: none;
+}
+
+/* Set box-sizing globally to include padding and border in element's total width and height */
+* {
+  box-sizing: border-box;
+}

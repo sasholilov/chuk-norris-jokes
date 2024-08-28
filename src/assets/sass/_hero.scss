@@ -1,0 +1,55 @@
+.hero-container {
+  max-width: 1280px;
+  background-color: #202833;
+  margin: 2rem auto;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 5rem 2rem;
+  align-items: center;
+
+  h2 {
+    color: $text-head;
+  }
+
+  & .hero-text {
+    padding-left: 1rem;
+    flex: 0 0 37%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    & a {
+      align-self: center;
+
+      & button {
+        border: none;
+        border-radius: $border-radius;
+        background-color: $button-bg;
+        color: $button-text;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        cursor: pointer;
+        transition: $transition-hover;
+
+        &:hover{
+          background-color: $button-bg-hover;
+          color: $button-text-hover;
+        }
+      }
+    }
+  }
+
+  & .hero-image {
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  & .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
