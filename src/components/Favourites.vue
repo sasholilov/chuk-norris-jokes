@@ -1,5 +1,5 @@
 <template>
-  <h2 class="message" v-if="isFavouritesJokes">There aren't favourites jokes</h2>
+  <h2 class="message" v-if="areThereFavouritesJokes">There aren't favourites jokes</h2>
   <div class="card-container">
       <Card v-for="joke in favouriteList" :joke="joke" @deleteJoke="deleteJoke"/>
   </div>
@@ -10,12 +10,12 @@ import Card from "@/components/Card.vue";
 
 export default {
   name: "Favourites",
-  components:{Card},
+  components: {Card},
   computed: {
     favouriteList() {
       return this.$store.getters.getFavorites;
     },
-    isFavouritesJokes(){
+    areThereFavouritesJokes() {
       return this.$store.getters.getFavorites.length === 0;
     }
   }

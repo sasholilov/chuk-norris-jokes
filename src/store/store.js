@@ -11,7 +11,7 @@ const store = createStore({
                 isFav: false,
             },
             categories: [],
-            favourites: []
+            favourites: [...JSON.parse(localStorage.getItem('jokes'))]
         }
     },
 
@@ -88,14 +88,17 @@ const store = createStore({
         setFavourites(state, joke){
             if (!state.favourites.some(favJoke=>favJoke.id === joke.id) && joke.isFav) {
                 state.favourites.push(joke);
+                localStorage.setItem('jokes', JSON.stringify(state.favourites));
             }
             if (state.favourites.some(favJoke=>favJoke.id === joke.id) && !joke.isFav) {
                state.favourites = state.favourites.filter(favJoke=>favJoke.id !== joke.id);
+                localStorage.setItem('jokes', JSON.stringify(state.favourites));
             }
             console.log(state.favourites)
         },
         deleteFavourite(state, id) {
             state.favourites = state.favourites.filter(favJoke=>favJoke.id !== id);
+            localStorage.setItem('jokes', JSON.stringify(state.favourites));
         }
     }
 })
