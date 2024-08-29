@@ -12,7 +12,7 @@
     <Spinner v-if="loading" />
     <div v-else class="joke">
       <p>{{joke.jokeText}}</p>
-      <i class="fa fa-star" :class="{'active':isFavorite}" @click="toFavorites(joke)"></i>
+      <i class="fa fa-star" :class="{'active':this.isFavorite}" @click="toFavorites(joke)"></i>
     </div>
   </div>
 </template>
@@ -69,6 +69,5 @@ export default {
     this.store.fetchJoke();
     this.store.fetchCategories()
   }
-
 }
 </script>
