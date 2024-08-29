@@ -9,8 +9,10 @@
 <!--Composition API-->
 <script setup>
 import {defineEmits, defineProps} from 'vue'
+
 const emit = defineEmits(['deleteJoke']);
 const props = defineProps(['joke']);
+
 const handleDeleteJoke = function () {
   emit('deleteJoke', props.joke.id);
 }

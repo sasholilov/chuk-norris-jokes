@@ -17,6 +17,8 @@
   </div>
 </template>
 
+
+<!--Composition API-->
 <script setup>
 import {useStore} from "@/store/store.js";
 import Spinner from "@/components/Spinner.vue";
