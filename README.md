@@ -1,14 +1,19 @@
-# vuepractice
+# Description
 
-This template should help get you started developing with Vue 3 in Vite.
+## _Chuk Norris Jokes
 
-## Recommended IDE Setup
+# Features
+ - Fetching data from chuck noris joke API.
+ - Showing random jokes.
+ - Ability to fetch joke by category.
+ - Saving jokes to favorites.
+ - Keeping the data for favourites in local storage.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Tech
+ - Javascript
+ - Vue.js
+ - HTML
+ - SCSS
 
 ## Project Setup
 
