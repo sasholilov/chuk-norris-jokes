@@ -1,6 +1,6 @@
 # Description
 
-## _Chuk Norris Jokes
+## _Chuk Norris Jokes_
 
 # Features
  - Fetching data from chuck noris joke API.
