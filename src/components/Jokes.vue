@@ -20,24 +20,28 @@
 <script setup>
 import {useStore} from "@/store/store.js";
 import Spinner from "@/components/Spinner.vue";
-
 import {ref, computed, onMounted,} from "vue";
 
 const category = ref('');
 const store = useStore();
+
 const newJoke = function() {
   store.fetchJoke(category.value);
 }
+
 const toCapitalize = function (text){
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
+
 const toFavorites = function(joke){
   store.addToFavourites(joke);
 }
+
 const joke = computed (() =>  store.getJoke);
 const categories = computed(() =>  store.getCategories );
 const loading = computed(() =>  store.getLoading);
 const isFavorite = computed(()=> store.getIsFavorite);
+
 onMounted(()=>{
   store.fetchJoke();
   store.fetchCategories();
