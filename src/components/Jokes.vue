@@ -23,10 +23,10 @@ import Spinner from "@/components/Spinner.vue";
 
 import {ref, computed, onMounted,} from "vue";
 
-const category = ref("");
+const category = ref('');
 const store = useStore();
 const newJoke = function() {
-  store.fetchJoke(category);
+  store.fetchJoke(category.value);
 }
 const toCapitalize = function (text){
   return text.charAt(0).toUpperCase() + text.slice(1);

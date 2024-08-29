@@ -29,6 +29,7 @@ export const useStore = defineStore('store', {
 
     actions: {
         async fetchJoke (category){
+            console.log('debug here',category);
              const url = !category ? `https://api.chucknorris.io/jokes/random` :
                `https://api.chucknorris.io/jokes/random?category=${category}`;
             try {
