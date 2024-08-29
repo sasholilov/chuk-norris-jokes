@@ -1,9 +1,9 @@
 //import {createStore} from 'vuex'
 import { defineStore } from 'pinia'
-import favourites from "@/components/Favourites.vue";
 
 const favouritesData = JSON.parse(localStorage.getItem('jokes'));
 
+//Pinia
 export const useStore = defineStore('store', {
     state:()=> {
         return {

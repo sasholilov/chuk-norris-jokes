@@ -4,12 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Spinner"
-}
-</script>
-
 <style scoped>
 .spinner-container {
   display: flex;

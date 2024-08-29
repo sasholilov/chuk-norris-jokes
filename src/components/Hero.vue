@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="hero-container">
     <div class="hero-text">
@@ -15,9 +13,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: "Hero",
-}
-</script>
