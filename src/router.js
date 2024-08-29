@@ -1,13 +1,13 @@
 import {createRouter, createWebHistory} from "vue-router";
 
-import HomePage from "@/pages/HomePage.vue";
-import JokesPage from "@/pages/JokesPage.vue";
-import FavouritesPage from "@/pages/FavouritesPage.vue";
+//import HomePage from "@/pages/HomePage.vue";
+//import JokesPage from "@/pages/JokesPage.vue";
+//import FavouritesPage from "@/pages/FavouritesPage.vue";
 const routes = [
-    {path: "/", component: HomePage},
-    {path: "/home", component: HomePage},
-    {path: "/jokes", component: JokesPage},
-    {path: "/favourites", component: FavouritesPage}
+    {path: "/", component: ()=>import('./pages/HomePage.vue')},
+    {path: "/home", component: ()=>import('./pages/HomePage.vue')},
+    {path: "/jokes", component: ()=>import('./pages/JokesPage.vue')},
+    {path: "/favourites", component: ()=>import('./pages/FavouritesPage.vue')},
 ]
 
 const router = createRouter({
