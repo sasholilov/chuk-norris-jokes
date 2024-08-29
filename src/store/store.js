@@ -1,5 +1,6 @@
 import {createStore} from 'vuex'
-import favourites from "@/components/Favourites.vue";
+
+const favouritesData = JSON.parse(localStorage.getItem('jokes'));
 
 const store = createStore({
     state(){
@@ -11,7 +12,7 @@ const store = createStore({
                 isFav: false,
             },
             categories: [],
-            favourites: [...JSON.parse(localStorage.getItem('jokes'))]
+            favourites: favouritesData ? favouritesData : [],
         }
     },
 

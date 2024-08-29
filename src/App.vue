@@ -9,6 +9,6 @@ import Header from "@/components/Header.vue";
 
 export default {
   name: "MainComponent",
-  components: {Header}
+  components: {Header},
 }
 </script>
