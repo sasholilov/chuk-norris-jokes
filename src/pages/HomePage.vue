@@ -9,10 +9,5 @@ export default {
   components: {
     Hero
   },
-  data() {
-    return {
-      test: '',
-    }
-  }
 }
 </script>
