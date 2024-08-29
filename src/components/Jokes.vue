@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import {useStore} from "@/store/store.js";
 import Spinner from "@/components/Spinner.vue";
 export default {
   name: "Jokes",
@@ -29,32 +30,44 @@ export default {
   },
   methods:{
     newJoke() {
-      this.$store.dispatch("fetchJoke", this.category)
+      //this.$store.dispatch("fetchJoke", this.category)
+      this.store.fetchJoke(this.category)
+
     },
     toCapitalize(text) {
       return `${text[0].toUpperCase()}${text.slice(1)}`;
     },
     toFavorites (joke) {
-      this.$store.dispatch("addToFavourites", joke)
+      //this.$store.dispatch("addToFavourites", joke)
+      this.store.addToFavourites(joke)
     }
   },
   computed: {
+    store() {
+      return useStore()
+    },
     joke() {
-      return this.$store.getters.getJoke;
+      //return this.$store.getters.getJoke;
+      return this.store.getJoke;
     },
     categories() {
-      return this.$store.getters.getCategories;
+      //return this.$store.getters.getCategories;
+      return this.store.getCategories;
     },
     loading() {
-      return this.$store.getters.getLoading;
+      //return this.$store.getters.getLoading;
+      return this.store.getLoading;
     },
     isFavorite(){
-      return this.$store.getters.getIsFavorite;
+      //return this.$store.getters.getIsFavorite;
+      return this.store.getIsFavorite;
     }
   },
   mounted() {
-   this.$store.dispatch("fetchJoke");
-   this.$store.dispatch("fetchCategories");
+   //this.$store.dispatch("fetchJoke");
+   //this.$store.dispatch("fetchCategories");
+    this.store.fetchJoke();
+    this.store.fetchCategories()
   }
 
 }
