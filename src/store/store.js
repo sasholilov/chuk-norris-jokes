@@ -46,13 +46,11 @@ const store = createStore({
         addToFavourites(context, joke) {
             const newJoke = {...joke, isFav: !joke.isFav};
             context.state.joke.isFav = newJoke.isFav;
-            console.log('joke', joke)
-            console.log('newjoke', newJoke)
             context.commit('setFavourites', newJoke);
         }
         ,
-        deleteFromFavourites(context, id) {
-            context.commit('deleteFavourite', id)
+        deleteFromFavourites({commit}, id) {
+            commit('deleteFavourite', id)
         }
     }
 ,
@@ -89,13 +87,11 @@ const store = createStore({
         setFavourites(state, joke){
             if (!state.favourites.some(favJoke=>favJoke.id === joke.id) && joke.isFav) {
                 state.favourites.push(joke);
-                localStorage.setItem('jokes', JSON.stringify(state.favourites));
             }
             if (state.favourites.some(favJoke=>favJoke.id === joke.id) && !joke.isFav) {
                state.favourites = state.favourites.filter(favJoke=>favJoke.id !== joke.id);
-                localStorage.setItem('jokes', JSON.stringify(state.favourites));
             }
-            console.log(state.favourites)
+            localStorage.setItem('jokes', JSON.stringify(state.favourites));
         },
         deleteFavourite(state, id) {
             state.favourites = state.favourites.filter(favJoke=>favJoke.id !== id);
