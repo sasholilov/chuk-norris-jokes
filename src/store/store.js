@@ -13,6 +13,7 @@ export const useStore = defineStore('store', {
                 id: "",
                 isFav: false,
             },
+            errorMsg: [],
             categories:[],
             favourites: favouritesData ? favouritesData : []
         }
@@ -25,6 +26,7 @@ export const useStore = defineStore('store', {
             return state.favourites.some(favJoke=>favJoke.id===state.joke.id);
         },
         getFavorites: (state) => state.favourites,
+        getErrorMessages: (state) => state.errorMsg,
     },
 
     actions: {
@@ -34,23 +36,31 @@ export const useStore = defineStore('store', {
             try {
                 this.setLoading(true);
                 const res = await fetch(url);
+                if(!res.ok){
+                    throw new Error('There is a problem fetching jokes.');
+                }
                 const data = await res.json();
                 this.setJoke(data);
                 this.setLoading(false);
             }
             catch (error) {
-                console.log(error)
+                console.log(error);
+                this.errorMsg.push(error);
            }
         },
 
         async fetchCategories() {
              try {
                 const res = await fetch ('https://api.chucknorris.io/jokes/categories');
+                 if(!res.ok){
+                     throw new Error('There is a problem fetching categories.');
+                 }
                 const data = await res.json();
                 this.saveCategories(data);
             }
             catch (error) {
                 console.log(error);
+                this.errorMsg.push(error);
             }
         },
 

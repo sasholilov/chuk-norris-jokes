@@ -9,6 +9,7 @@
         <span class="from-category">from {{category ? category : 'random'}} category</span>
       </button>
     </div>
+    <Errors v-if="hasError" :errors="errors" />
     <Spinner v-if="loading" />
     <div v-else class="joke">
       <p>{{joke.jokeText}}</p>
@@ -22,6 +23,7 @@
 <script setup>
 import {useStore} from "@/store/store.js";
 import Spinner from "@/components/Spinner.vue";
+import Errors from "@/components/Errors.vue";
 import {ref, computed, onMounted,} from "vue";
 
 const category = ref('');
@@ -43,6 +45,8 @@ const joke = computed (() =>  store.getJoke);
 const categories = computed(() =>  store.getCategories );
 const loading = computed(() =>  store.getLoading);
 const isFavorite = computed(()=> store.getIsFavorite);
+const errors = computed(()=> store.getErrorMessages);
+const hasError = computed(()=>store.getErrorMessages.length > 0);
 
 onMounted(()=>{
   store.fetchJoke();
