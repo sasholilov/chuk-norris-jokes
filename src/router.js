@@ -8,6 +8,7 @@ const routes = [
     {path: "/home", component: ()=>import('./pages/HomePage.vue')},
     {path: "/jokes", component: ()=>import('./pages/JokesPage.vue')},
     {path: "/favourites", component: ()=>import('./pages/FavouritesPage.vue')},
+    {path: "/:pathMatch(.*)*", component: () => import('./pages/PageNotFound.vue')},
 ]
 
 const router = createRouter({
